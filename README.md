@@ -12,4 +12,6 @@ Narendranadh G
 
 ## Status
 
+Current Version: 0.0.1
+
 🚧 Under Development
