@@ -2,4 +2,14 @@
 
 Enterprise AI Platform
 
-Founder: Narendranadh G
+## Vision
+
+Build AI systems that automate enterprise work using intelligent agents.
+
+## Founder
+
+Narendranadh G
+
+## Status
+
+🚧 Under Development
