@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.schemas.profile import ProfileResponse
+from app.schemas.profile import get_profile
 
 router = APIRouter()
 
@@ -31,9 +31,4 @@ def health():
 @router.get("/profile", response_model=ProfileResponse)
 
 def profile():
-    return ProfileResponse(
-        company="Genesis AI",
-        founder="Narendranadh G",
-        version="1.0",
-        mission="Build Enterprise AI Solutions"
-    )
+    return get_profile()
