@@ -3,6 +3,10 @@ from fastapi import APIRouter
 from app.schemas.profile import ProfileResponse
 from app.services.profile_service import get_profile
 
+from datetime import datetime
+
+from app.schemas.base_response import BaseResponse
+
 router = APIRouter()
 
 
@@ -29,7 +33,15 @@ def health():
     }
 
 
-@router.get("/profile", response_model=ProfileResponse)
+@router.get("/profile", response_model=BaseResponse)
 
 def profile():
-    return get_profile()
+    profile = get_profile()
+    
+    response = BaseResponse(
+        success=True,
+        message="Profile fetched successfully",
+        data=profile,
+        timestamp=datetime.utcnow()
+    )
+    return response
