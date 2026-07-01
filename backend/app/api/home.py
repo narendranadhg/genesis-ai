@@ -1,4 +1,5 @@
-from fastapi import APIRouter
+from fastapi import APIRouter,depends
+from app.dependancies import get_company
 
 from app.schemas.profile import ProfileResponse
 from app.services.profile_service import get_profile
@@ -45,3 +46,9 @@ def profile():
         timestamp=datetime.utcnow()
     )
     return response
+
+@router.get("/company")
+def company(company: str = depends(get_company)):
+    return {
+        "company": company
+    }
