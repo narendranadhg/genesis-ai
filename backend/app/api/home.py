@@ -48,7 +48,5 @@ def profile():
     return response
 
 @router.get("/company")
-def company(company: str = Depends(get_company)):
-    return {
-        "company": company
-    }
+def company(info: depends(get_company)):
+    return info
