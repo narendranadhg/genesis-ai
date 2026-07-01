@@ -48,5 +48,5 @@ def profile():
     return response
 
 @router.get("/company")
-def company(info: depends(get_company)):
+def company(info: dict = Depends(get_company)):
     return info 
