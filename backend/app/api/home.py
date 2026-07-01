@@ -1,4 +1,4 @@
-from fastapi import APIRouter,depends
+from fastapi import APIRouter, Depends
 from app.dependancies import get_company
 
 from app.schemas.profile import ProfileResponse
@@ -48,7 +48,7 @@ def profile():
     return response
 
 @router.get("/company")
-def company(company: str = depends(get_company)):
+def company(company: str = Depends(get_company)):
     return {
         "company": company
     }
