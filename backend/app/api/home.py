@@ -49,4 +49,4 @@ def profile():
 
 @router.get("/company")
 def company(info: depends(get_company)):
-    return info
+    return info 
