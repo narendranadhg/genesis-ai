@@ -1,2 +1,6 @@
 def get_company():
-    return "Genesis AI"
+    return {
+        "company": "Genesis AI",
+        "location": "Hyderabad",
+        "employees": 100
+    }
