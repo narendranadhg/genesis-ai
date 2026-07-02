@@ -3,6 +3,7 @@ from app.dependancies import get_company
 
 from app.schemas.profile import ProfileResponse
 from app.services.profile_service import get_profile
+from app.schemas.employee import Employee
 
 from datetime import datetime
 
@@ -49,4 +50,30 @@ def profile():
 
 @router.get("/company")
 def company(info: dict = Depends(get_company)):
-    return info 
+   return info 
+
+@router.get("/square/{number}")
+def square(number: int):
+    return {
+        "number": number,
+        "square": number * number
+    }
+
+@router.get("/search")
+def search(name: str):
+    return {
+        "search_name": name
+    }
+
+@router.get("/calculator")
+def calculator(a: int, b: int = 0):
+    return {
+        "sum": a + b
+    }   
+
+@router.post("/employee")
+def create_employee(employee: Employee):
+    return {
+        "message": "Employee Created Successfully",
+        "employee": employee
+    }
