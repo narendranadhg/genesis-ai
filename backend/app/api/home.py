@@ -97,3 +97,12 @@ def square(number: int):
             "square": number * number
         }
     )
+
+# from fastapi import APIRouter
+
+# router = APIRouter()
+
+
+# @router.get("/")
+# def home():
+#     return {"status": "ok"}
